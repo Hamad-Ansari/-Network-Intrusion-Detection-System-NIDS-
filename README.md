@@ -47,3 +47,5 @@ normal, smurf, neptune, back, satan, ipsweep, portsweep, warezclient, pod, teard
 ## 📊 Dataset
 
 KDD Cup 1999 (10% subset) — 41 features, 24,861 records
+## App link 
+https://eljapkswaklnaxgzedbngm.streamlit.app/
