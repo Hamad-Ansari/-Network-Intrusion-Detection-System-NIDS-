@@ -1,102 +1,49 @@
-# 🛡️ Network Intrusion Detection System (NIDS)
+# 🛡️ NIDS — Network Intrusion Detection System
 
-A high-performance **Network Intrusion Detection System (NIDS)** built using classical machine learning and ensemble techniques to classify network traffic as **normal** or **malicious (attack types)**.
+A production-grade Streamlit app for detecting network intrusions using machine learning on the KDD Cup 1999 dataset.
 
-This project benchmarks multiple models on the **KDD Cup 1999 dataset**, delivering near state-of-the-art performance with detailed evaluation metrics and visual diagnostics.
+## 🚀 Quick Start
 
----
-
-## 🚀 Project Highlights
-
-- 🔍 Multi-class classification of network traffic
-- ⚡ High accuracy (up to **99.76%**)
-- 🤖 Comparison of multiple ML algorithms
-- 📊 Advanced evaluation metrics + confusion matrices
-- 🧪 Scalable and reproducible pipeline
-
----
-
-## 📂 Dataset
-
-- **KDD Cup 1999 Dataset (10% subset)**
-- Widely used benchmark in intrusion detection research
-
-### Files Used:
-- `KDDCup Data 10 Percent.csv` → Main dataset  
-- `kddcup.txt` → Feature/column names  
-- `training_attack_types.txt` → Attack label mappings  
-
----
-
-## 🧠 Models Implemented
-
-| Model                     | Description |
-|--------------------------|------------|
-| Decision Tree            | Baseline interpretable model |
-| Random Forest            | Ensemble of decision trees |
-| K-Nearest Neighbors      | Distance-based classifier |
-| AdaBoost                 | Boosting-based weak learners |
-| Gradient Boosting        | Sequential error correction |
-| HistGradientBoosting     | Optimized gradient boosting |
-| XGBoost                  | High-performance boosting |
-
----
-
-## 📊 Performance Metrics
-
-| Model                     | Accuracy |
-|--------------------------|----------|
-| 🥇 Random Forest          | **99.76%** |
-| 🥈 Decision Tree          | 99.59% |
-| 🥉 KNN                    | 99.41% |
-| XGBoost                  | 99.39% |
-| AdaBoost                 | 94.54% |
-| HistGradientBoosting     | 93.10% |
-| Gradient Boosting        | 92.86% |
-
----
-
-## 📈 Evaluation Strategy
-
-Each model is evaluated using:
-
-- ✅ Accuracy  
-- 🎯 Precision  
-- 🔁 Recall  
-- ⚖️ F1-Score  
-- 🔲 Confusion Matrix Visualization  
-
----
-
-## 🛠️ Tech Stack
-
-### Core Libraries
-- `pandas` – Data processing  
-- `numpy` – Numerical computations  
-
-### Visualization
-- `matplotlib` – Plotting  
-- `seaborn` – Statistical visualization  
-
-### Machine Learning
-- `scikit-learn`
-  - DecisionTreeClassifier
-  - RandomForestClassifier
-  - AdaBoostClassifier
-  - GradientBoostingClassifier
-  - HistGradientBoostingClassifier
-  - KNeighborsClassifier
-  - StandardScaler
-  - LabelEncoder
-  - GridSearchCV  
-
-- `xgboost` – Advanced boosting algorithm  
-
----
-
-## ⚙️ How to Run
-
-### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/your-username/NIDS.git
-cd NIDS
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+## 📁 Project Structure
+
+```
+nids-streamlit-app/
+├── app.py                  # Main Streamlit application
+├── models/
+│   ├── random_forest.pkl
+│   ├── decision_tree.pkl
+│   ├── gradient_boosting.pkl
+│   ├── adaboost.pkl
+│   ├── hist_gradient_boosting.pkl
+│   ├── knn.pkl
+│   ├── xgboost.pkl
+│   └── preprocessors.pkl   # LabelEncoders + StandardScaler
+├── utils/
+│   ├── preprocessing.py    # Feature processing pipeline
+│   └── helpers.py          # Model loading + prediction helpers
+├── data/
+│   └── sample.csv          # Sample KDD Cup data
+└── requirements.txt
+```
+
+## 🎯 Features
+
+- **7 ML Models**: Random Forest, Decision Tree, Gradient Boosting, AdaBoost, Hist GB, KNN, XGBoost
+- **2 Input Modes**: Upload CSV batch analysis OR manual form entry
+- **Real-time Predictions**: Class label + confidence scores
+- **Visual Analytics**: Pie charts, bar charts, feature importance
+- **Dark Cybersecurity Theme**: Neon-accented responsive dashboard
+- **CSV Download**: Export all predictions
+
+## 🔐 Attack Types Detected
+
+normal, smurf, neptune, back, satan, ipsweep, portsweep, warezclient, pod, teardrop, nmap
+
+## 📊 Dataset
+
+KDD Cup 1999 (10% subset) — 41 features, 24,861 records
